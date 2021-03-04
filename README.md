@@ -1,0 +1,2 @@
+# 2021MathorCup_B
+2021MathorCup第一届大数据赛B题解决方案
