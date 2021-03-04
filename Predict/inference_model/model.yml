@@ -1,0 +1,58 @@
+Model: HRNet
+Transforms:
+- ResizeByLong:
+    long_size: 512
+- Padding:
+    im_padding_value:
+    - 127.5
+    - 127.5
+    - 127.5
+    label_padding_value: 255
+    target_size: 512
+- Normalize:
+    max_val:
+    - 255.0
+    - 255.0
+    - 255.0
+    mean:
+    - 0.5
+    - 0.5
+    - 0.5
+    min_val:
+    - 0
+    - 0
+    - 0
+    std:
+    - 0.5
+    - 0.5
+    - 0.5
+TransformsMode: BGR
+_Attributes:
+  eval_metrics:
+    miou: 0.8090209514473021
+  fixed_input_shape: null
+  labels:
+  - '0'
+  - '1'
+  model_type: segmenter
+  num_classes: 2
+_ModelInputsOutputs:
+  test_inputs:
+  - - image
+    - image
+  test_outputs:
+  - - pred
+    - unsqueeze2_0.tmp_0
+  - - logit
+    - softmax_0.tmp_0
+_init_params:
+  class_weight: null
+  ignore_index: 255
+  input_channel: 3
+  num_classes: 2
+  use_bce_loss: false
+  use_dice_loss: false
+  width: 18
+completed_epochs: 0
+status: Infer
+version: 1.1.5

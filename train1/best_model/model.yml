@@ -1,0 +1,54 @@
+Model: HRNet
+Transforms:
+- Padding:
+    im_padding_value:
+    - 127.5
+    - 127.5
+    - 127.5
+    label_padding_value: 255
+    target_size: 769
+- Normalize:
+    max_val:
+    - 255.0
+    - 255.0
+    - 255.0
+    mean:
+    - 0.5
+    - 0.5
+    - 0.5
+    min_val:
+    - 0
+    - 0
+    - 0
+    std:
+    - 0.5
+    - 0.5
+    - 0.5
+TransformsMode: BGR
+_Attributes:
+  eval_metrics:
+    miou: 0.2858157662482146
+  fixed_input_shape: null
+  labels:
+  - background
+  - vegetation
+  - building
+  - water
+  - roadbackground
+  - vegetation
+  - building
+  - water
+  - road
+  model_type: segmenter
+  num_classes: 9
+_init_params:
+  class_weight: null
+  ignore_index: 255
+  input_channel: 3
+  num_classes: 9
+  use_bce_loss: false
+  use_dice_loss: false
+  width: 18
+completed_epochs: 210
+status: Normal
+version: 1.3.3
